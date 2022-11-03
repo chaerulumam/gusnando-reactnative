@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
-import {View, Text, StatusBar, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+  Switch,
+} from 'react-native';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       header: 'Home',
+      switch: false,
     };
   }
 
@@ -28,7 +36,11 @@ class App extends Component {
 
         <TouchableOpacity
           onPress={() => console.log('halo')}
-          style={{justifyContent: 'center', alignItems: 'center'}}>
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 20,
+          }}>
           <Image
             source={{
               uri: 'https://images.unsplash.com/photo-1662752531834-2d4606b7a27b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
@@ -37,6 +49,19 @@ class App extends Component {
             resizeMode="cover"
           />
         </TouchableOpacity>
+
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 20,
+          }}>
+          <Switch
+            value={this.state.switch}
+            onValueChange={() => this.setState({switch: !this.state.switch})}
+          />
+        </View>
+
         <TouchableOpacity
           style={{
             backgroundColor: '#9c27b0',
