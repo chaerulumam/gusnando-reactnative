@@ -9,9 +9,19 @@ class App extends Component {
 
   render() {
     return (
-      <View>
-        <Text style={{fontSize: 28, fontWeight: 'bold'}}>Hello</Text>
-        <Text>Umem</Text>
+      <View style={{flex: 1}}>
+        <View
+          style={{
+            backgroundColor: 'crimson',
+            paddingVertical: 20,
+            justifyContent: 'center',
+            alignItems: 'center',
+            elevation: 3,
+          }}>
+          <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 20}}>
+            Header
+          </Text>
+        </View>
       </View>
     );
   }
