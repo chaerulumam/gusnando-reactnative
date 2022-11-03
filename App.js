@@ -30,6 +30,7 @@ class App extends Component {
               uri: 'https://images.unsplash.com/photo-1662752531834-2d4606b7a27b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
             }}
             style={{width: 300, height: 300}}
+            resizeMode="cover"
           />
         </View>
       </View>
