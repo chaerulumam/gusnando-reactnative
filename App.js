@@ -8,6 +8,7 @@ import {
   Alert,
   StyleSheet,
   FlatList,
+  ToastAndroid,
 } from 'react-native';
 
 class App extends Component {
@@ -73,10 +74,17 @@ class App extends Component {
           style={{flex: 1, marginTop: 20}}
           data={this.state.dataSayur}
           renderItem={({item, index}) => (
-            <View style={styles.flatListView}>
+            <TouchableOpacity
+              style={styles.flatListView}
+              onPress={() =>
+                ToastAndroid.show(
+                  item.namaSayur + ' on press',
+                  ToastAndroid.SHORT,
+                )
+              }>
               <Text style={styles.flatListText}>{item.namaSayur}</Text>
               <Text style={styles.flatListText}>{item.harga}</Text>
-            </View>
+            </TouchableOpacity>
           )}
           keyExtractor={item => item.namaSayur}
         />
