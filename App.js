@@ -9,6 +9,7 @@ import {
   TextInput,
   ScrollView,
   StyleSheet,
+  FlatList,
 } from 'react-native';
 
 class App extends Component {
@@ -18,6 +19,21 @@ class App extends Component {
       header: 'Home',
       switch: false,
       username: '',
+      data: [1, 2, 3, 4, 5, 6, 7],
+      dataSayur: [
+        {
+          namaSayur: 'Kangkung',
+          harga: 5000,
+        },
+        {
+          namaSayur: 'Sop',
+          harga: 7000,
+        },
+        {
+          namaSayur: 'Jengkol',
+          harga: 10000,
+        },
+      ],
     };
   }
 
@@ -43,33 +59,17 @@ class App extends Component {
           />
         </TouchableOpacity>
 
-        <View style={styles.switch}>
-          <Switch
-            value={this.state.switch}
-            onValueChange={() => this.setState({switch: !this.state.switch})}
-          />
-        </View>
-
-        <TextInput
-          style={styles.textInput}
-          value={this.state.username}
-          onChangeText={value => this.setState({username: value})}
+        <FlatList
+          style={{flex: 1, marginTop: 20}}
+          data={this.state.dataSayur}
+          renderItem={({item, index}) => (
+            <View style={styles.flatListView}>
+              <Text style={styles.flatListText}>{item.namaSayur}</Text>
+              <Text style={styles.flatListText}>{item.harga}</Text>
+            </View>
+          )}
+          keyExtractor={item => item.namaSayur}
         />
-
-        <ScrollView>
-          <TouchableOpacity style={styles.button}>
-            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
-          </TouchableOpacity>
-        </ScrollView>
       </View>
     );
   }
@@ -104,6 +104,19 @@ const styles = StyleSheet.create({
   image: {width: 300, height: 300},
   switch: {justifyContent: 'center', alignItems: 'center', marginTop: 20},
   imageHeader: {justifyContent: 'center', alignItems: 'center', marginTop: 20},
+  flatListView: {
+    marginBottom: 10,
+    backgroundColor: 'crimson',
+    marginHorizontal: 20,
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  flatListText: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
 
 export default App;
