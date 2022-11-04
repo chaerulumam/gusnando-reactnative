@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Switch,
   TextInput,
+  ScrollView,
 } from 'react-native';
 
 class App extends Component {
@@ -74,19 +75,60 @@ class App extends Component {
           onChangeText={value => this.setState({username: value})}
         />
 
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#9c27b0',
-            paddingVertical: 20,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: 20,
-            marginHorizontal: 20,
-            borderRadius: 50,
-            elevation: 3,
-          }}>
-          <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
-        </TouchableOpacity>
+        <ScrollView>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#9c27b0',
+              paddingVertical: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 20,
+              marginHorizontal: 20,
+              borderRadius: 50,
+              elevation: 3,
+            }}>
+            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#9c27b0',
+              paddingVertical: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 20,
+              marginHorizontal: 20,
+              borderRadius: 50,
+              elevation: 3,
+            }}>
+            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#9c27b0',
+              paddingVertical: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 20,
+              marginHorizontal: 20,
+              borderRadius: 50,
+              elevation: 3,
+            }}>
+            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#9c27b0',
+              paddingVertical: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 20,
+              marginHorizontal: 20,
+              borderRadius: 50,
+              elevation: 3,
+            }}>
+            <Text style={{color: '#fff', fontWeight: 'bold'}}>Click Here</Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
