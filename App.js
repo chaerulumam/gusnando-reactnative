@@ -9,6 +9,7 @@ import {
   StyleSheet,
   FlatList,
   ToastAndroid,
+  BackHandler,
 } from 'react-native';
 
 class App extends Component {
@@ -34,6 +35,32 @@ class App extends Component {
         },
       ],
     };
+  }
+
+  backAction = () => {
+    Alert.alert('Warning', 'are you sure want to turn off your app?', [
+      {
+        text: 'cancel',
+        onPress: () => null,
+        style: 'cancel',
+      },
+      {
+        text: 'yes',
+        onPress: () => BackHandler.exitApp(),
+      },
+    ]);
+    return true;
+  };
+
+  componentDidMount() {
+    this.BackHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      this.backAction,
+    );
+  }
+
+  componentWillUnmount() {
+    this.BackHandler.remove();
   }
 
   render() {
