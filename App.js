@@ -5,9 +5,7 @@ import {
   StatusBar,
   Image,
   TouchableOpacity,
-  Switch,
-  TextInput,
-  ScrollView,
+  Alert,
   StyleSheet,
   FlatList,
 } from 'react-native';
@@ -48,7 +46,19 @@ class App extends Component {
         </View>
 
         <TouchableOpacity
-          onPress={() => console.log('halo')}
+          onPress={() =>
+            Alert.alert('Reminder!!', 'You just press the image', [
+              {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel on press'),
+                style: 'cancel',
+              },
+              {
+                text: 'Ok',
+                onPress: () => console.log('Ok on press'),
+              },
+            ])
+          }
           style={styles.imageHeader}>
           <Image
             source={{
